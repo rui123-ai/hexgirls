@@ -1,34 +1,87 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-
-// Pages
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Discography from './pages/Discography';
 import Gallery from './pages/Gallery';
 import Merch from './pages/Merch';
 import Contact from './pages/Contact';
-
-// Components
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import './styles/index.css';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-hex-black text-white">
-        <Navigation />
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/discography" element={<Discography />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/merch" element={<Merch />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Home />
+                </motion.div>
+              } />
+              <Route path="/about" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <About />
+                </motion.div>
+              } />
+              <Route path="/discography" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Discography />
+                </motion.div>
+              } />
+              <Route path="/gallery" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Gallery />
+                </motion.div>
+              } />
+              <Route path="/merch" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Merch />
+                </motion.div>
+              } />
+              <Route path="/contact" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Contact />
+                </motion.div>
+              } />
+            </Routes>
+          </AnimatePresence>
+        </main>
         <Footer />
       </div>
     </Router>
