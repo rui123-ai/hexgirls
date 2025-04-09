@@ -14,74 +14,61 @@ import './styles/index.css';
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen bg-hex-black">
         <Navbar />
-        <main className="flex-grow">
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Home />
-                </motion.div>
-              } />
-              <Route path="/about" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <About />
-                </motion.div>
-              } />
-              <Route path="/discography" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Discography />
-                </motion.div>
-              } />
-              <Route path="/gallery" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Gallery />
-                </motion.div>
-              } />
-              <Route path="/merch" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Merch />
-                </motion.div>
-              } />
-              <Route path="/contact" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <Contact />
-                </motion.div>
-              } />
-            </Routes>
-          </AnimatePresence>
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <About />
+            </motion.div>
+          } />
+          <Route path="/discography" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Discography />
+            </motion.div>
+          } />
+          <Route path="/gallery" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Gallery />
+            </motion.div>
+          } />
+          <Route path="/merch" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Merch />
+            </motion.div>
+          } />
+          <Route path="/contact" element={
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Contact />
+            </motion.div>
+          } />
+        </Routes>
         <Footer />
       </div>
     </Router>
